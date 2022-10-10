@@ -10,48 +10,48 @@
 </p>
 
 <p align="center">
-Create and boot a SSH ramdisk on checkm8 devices
+在 checkm8 设备上创建和启动 SSH ramdisk
 </p>
 
 ---
 
-# Prerequsites
+# 先决条件
 
-1. A computer running macOS/linux
-2. A checkm8 device (A7-A11)
+1. 运行 MacOS/linux 的计算机
+2. 一台 checkm8 设备 (A7-A11)
 
-# Usage
+# 用法
 
-1. Clone and cd into this repository: `git clone https://github.com/verygenericname/SSHRD_Script --recursive && cd SSHRD_Script`
-    - If you have cloned this before, run `cd SSHRD_Script && git pull` to pull new changes
-2. Run `./sshrd.sh <iOS version for ramdisk>`, **without** the `<>`.
-3. Place your device into DFU mode
-    - A11 users, go to recovery first, then DFU.
-4. Run `./sshrd.sh boot` to boot the ramdisk
-5. Run `./sshrd.sh ssh` to connect to SSH on your device
-6. Finally, to mount the filesystems, run `mount_filesystems`  
-    - /var is mounted to /mnt2 in the ssh session.
-    - /private/preboot is mounted to /mnt6.
-7. Have fun!
+1. 克隆并 cd 到这个存储库`git clone https://github.com/verygenericname/SSHRD_Script --recursive && cd SSHRD_Script`
+    - 如果您之前已经克隆了它，请运行 `cd SSHRD_Script && git pull` to pull 以获取新的更改
+2. 运行 `./sshrd.sh <iOS 版本 for ramdisk>`, 没有 `<>`
+3. 将您的设备进入 DFU 模式
+    - A11 用户，先去恢复模式，然后是DFU模式
+4. 运行 `./sshrd.sh boot` 启动 ramdisk
+5. 运行 `./sshrd.sh ssh` 连接到您设备上的 SSH
+6. 最后，要挂载文件系统，运行 `mount_filesystems`
+    - /var 在 ssh 会话中挂载到 /mnt2
+    - /private/preboot 挂载到 /mnt6
+7. 玩得开心！
 
-# Linux notes
-- you may have to run sudo systemctl stop usbmuxd
-- then run sudo usbmuxd -p -f
-- then ssh will work
+# Linux 笔记
+- 您可能必须运行 `sudo systemctl stop usbmuxd`
+- 然后运行 `sudo usbmuxd -p -f`
+- 然后 ssh 将工作
 
-# Other commands
+# 其他命令
 
-- Reset your device: `./sshrd.sh reset`
-- Dump onboard blobs: `./sshrd.sh dump-blobs`
-- Delete old SSH ramdisk: `./sshrd.sh clean`
+- 抹除您的设备：`./sshrd.sh reset`
+- 转储板载 Blob：`./sshrd.sh dump-blobs`
+- 删除旧的 SSH ramdisk：`./sshrd.sh clean`
 
-# Other Stuff
+# 其他的东西
 
-- [Reddit Post](https://www.reddit.com/r/jailbreak/comments/wgiye1/free_release_ssh_ramdisk_creator_for_iphones_ipad/)
+- [Reddit 帖子](https://www.reddit.com/r/jailbreak/comments/wgiye1/free_release_ssh_ramdisk_creator_for_iphones_ipad/)
 
-# Credits
-- [tihmstar](https://github.com/tihmstar) for pzb/original iBoot64Patcher/img4tool
-- [xerub](https://github.com/xerub) for img4lib and restored_external in the ramdisk
-- [Cryptic](https://github.com/Cryptiiiic) for iBoot64Patcher fork
-- [opa334](https://github.com/opa334) for TrollStore
-- [Nebula](https://github.com/itsnebulalol) for a bunch of QOL fixes to this script
+# 致谢
+- [tihmstar](https://github.com/tihmstar) 用于 pzb/original iBoot64Patcher/img4tool
+- [xerub](https://github.com/xerub) 用于 ramdisk 中的 img4lib 和 restore_external
+- [Cryptic](https://github.com/Cryptiiiic) 用于 iBoot64Patcher fork
+- [opa334](https://github.com/opa334) 对于 TrollStore
+- [Nebula](https://github.com/itsnebulalol) 对于这个脚本的一堆 QOL 修复
